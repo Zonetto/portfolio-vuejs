@@ -3,26 +3,27 @@
 Vue.createApp({
     template: `
     <section id="contact" class="contact-section">
-      <div class="contact-container">
-        <h1>Contact <span>Me</span></h1>
-        <form @submit.prevent="sendEmail">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" v-model="form.name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" v-model="form.email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" v-model="form.message" rows="5" required></textarea>
-          </div>
-          <button type="submit">Send Message</button>
-        </form>
-        <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
-        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
-      </div>
+        <div class="contact-container">
+            <h1>Contact <span>Me</span></h1>
+            <div class="contact-form">
+                <h1>Send <span>Email</span></h1>
+                <form @submit.prevent="sendEmail">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" v-model="form.name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" v-model="form.email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="fixed-textarea" v-model="form.message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
     </section>
   `,
     data() {

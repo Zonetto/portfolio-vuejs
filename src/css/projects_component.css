@@ -3,11 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #f9f9f9;
     position: relative;
     margin-top: 2rem;
     padding: 5rem 0;
+    width: 100%;
     z-index: 1;
+    
 }
 
 .projects-section h1 {
@@ -19,7 +21,6 @@
     color: #3783ff;
 }
 
-
 .projects-cards {
     display: flex;
     flex-direction: column;
@@ -28,19 +29,25 @@
     width: 100%;
 }
 
-.projects-cards h1 {
-    font-size: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
-
 .projects-card {
     display: flex;
     flex-direction: row;
     gap: 2rem;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    width: 60%;
+    padding: 0;
+    margin: 0;
 }
+
+
+.projects-cards h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    /* width: 100%; */
+}
+
 
 .projects-card {
     background-color: #fff;
@@ -69,11 +76,11 @@
     justify-content: start;
     align-items: start;
     gap: 1rem;
-    width: 50vh;
+    width: 60%;
 }
 
 .projects-info h4 {
-    color: #000;
+    color: #555;
     font-weight: 400;
     line-height: 1.5;
 }
@@ -98,9 +105,17 @@
 
 .projects-btns button {
     padding: 0.5rem 1rem;
+    height: 2.5rem;
     border: none;
     border-radius: 5px;
-    background-color: #3783ff;
-    color: #fff;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
     cursor: pointer;
+}
+
+.projects-btns button:hover {
+    background-color: #3783ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
 }

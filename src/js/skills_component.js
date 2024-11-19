@@ -9,8 +9,8 @@ Vue.createApp({
             <div class="skill-item" v-for="(skill, index) in repeatedIcons" :key="index">
               <iconify-icon class="skill-icon"
                 :icon="skill.icon"
-                width="4.5rem"
-                height="4.5rem">
+                width="60"
+                height="60">
               </iconify-icon>
               <p class="skill-title">{{ skill.title }}</p>
             </div>
@@ -54,30 +54,7 @@ Vue.createApp({
       return [...this.skillsIcons, ...this.skillsIcons];
     }
   },
-  methods: {
-    scrollLeft() {
-      const container = this.$refs.scrollContainer;
-      if (container) {
-        container.scrollBy({
-          left: -100, // Adjust the scroll distance as needed
-          behavior: "smooth"
-        });
-      } else {
-        console.error("Scroll container not found!");
-      }
-    },
-    scrollRight() {
-      const container = this.$refs.scrollContainer;
-      if (container) {
-        container.scrollBy({
-          left: 100, // Adjust the scroll distance as needed
-          behavior: "smooth"
-        });
-      } else {
-        console.error("Scroll container not found!");
-      }
-    }
-  }
+
 }).mount('#SkillsComponent');
 
 

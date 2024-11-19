@@ -1,0 +1,105 @@
+{
+    "project": [
+        {
+            "id": "1",
+            "sort": "1",
+            "title": "Unsplash Image Viewer App",
+            "image": "https://i.im.ge/2024/11/18/zXTKIW.how-unsplash.jpeg",
+            "description": "application that allows users to browse images directly from the Unsplash website. Designed with a clean and user-friendly interface, the app ensures seamless browsing even during limited connectivity by implementing offline capabilities.",
+            "buttons": [
+                {
+                    "text": {
+                        "stringValue": "GitHub"
+                    },
+                    "link": {
+                        "stringValue": "https://github.com/Zonetto/unsplash-app-kotlin"
+                    }
+                }
+            ],
+            "icons": [
+                {
+                    "stringValue": "devicon:kotlin"
+                },
+                {
+                    "stringValue": "devicon:jetpackcompose"
+                },
+                {
+                    "stringValue": "devicon:azuresqldatabase"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "sort": "2",
+            "title": "Android app advertise and communication with public service providers",
+            "image": "https://i.im.ge/2024/11/17/zTWZUr.android-app-advertise-communication-public-service-providers.png",
+            "description": "An application that connects various service providers with users, making it easier to search and book a wide range of services, such as car repairs and more. The app aims to facilitate access to services, enhance job opportunities for providers, improve user experience, and promote transparency and trust between parties. Additionally, the project supports the local economy by empowering small and medium enterprises and encouraging local transactions.",
+            "buttons": [
+                {
+                    "text": {
+                        "stringValue": "GitHub"
+                    },
+                    "link": {
+                        "stringValue": "https://github.com/Zonetto/flutter_announcement_of_services_app"
+                    }
+                }
+            ],
+            "icons": [
+                {
+                    "stringValue": "devicon:firebase"
+                },
+                {
+                    "stringValue": "logos:dart"
+                },
+                {
+                    "stringValue": "devicon:flutter"
+                },
+                {
+                    "stringValue": "logos:figma"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "sort": "3",
+            "title": "Little Lemon Capstone (ReactJS)",
+            "image": "https://github.com/user-attachments/assets/db6c6031-96b8-430c-89c4-fb86ad6ed8c4",
+            "description": "This project was created during Meta's Coursera Front-End Development course. It is the culmination of the Front-End Development Track and showcases the implementation of a booking application for the Little Lemon Website.  The website was built using React Components to demonstrate how React can be utilized for creating functional and dynamic web applications. It also includes the integration of API calls. Currently, the only working functionality is the Reserve a Table feature, in addition to the responsive design.",
+            "buttons": [
+                {
+                    "link": {
+                        "stringValue": "https://github.com/Zonetto/little-lemon-capstone-reactJs"
+                    },
+                    "text": {
+                        "stringValue": "GitHub"
+                    }
+                }
+            ],
+            "icons": [
+                {
+                    "stringValue": "skill-icons:react-dark"
+                },
+                {
+                    "stringValue": "devicon:html5"
+                },
+                {
+                    "stringValue": "vscode-icons:file-type-css"
+                }
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "id": "1",
+            "sort": "1",
+            "title": "Web Developer",
+            "company": "M3 Digital - Contract",
+            "date": "September 2021 - February 2022",
+            "description": "Front-end development for a variety of Shopify stores such as FitazFK, Rider Collective, Masseuse Massage. Developed high-quality landing pages and front-end features using HTML, CSS, SCSS, JavaScript, and Liquid",
+            "icons": [
+                "logos:html-5",
+                "logos:css-3"
+            ]
+        }
+    ]
+}

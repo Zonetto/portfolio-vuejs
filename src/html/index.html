@@ -7,11 +7,12 @@
     <title>Portfolio</title>
 </head>
 <link rel="stylesheet" href="../css/index.css">
-<link rel="stylesheet" href="../css/ProjectsComponent.css">
-<link rel="stylesheet" href="../css/SkillsComponent.css">
-<link rel="stylesheet" href="../css/EducationComponent.css">
-<link rel="stylesheet" href="../css/ContactComponent.css">
-<link rel="stylesheet" href="../css/FooterComponent.css">
+<link rel="stylesheet" href="../css/projects_component.css">
+<link rel="stylesheet" href="../css/experience_component.css">
+<link rel="stylesheet" href="../css/skills_component.css">
+<link rel="stylesheet" href="../css/education_component.css">
+<link rel="stylesheet" href="../css/contact_component.css">
+<link rel="stylesheet" href="../css/footer_component.css">
 <!-- <link rel="stylesheet" href="../css/ToolsComponent.css"> -->
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
@@ -25,35 +26,36 @@
                         <div class="link-wrapper">
                             <a href="#projects" class="link"> Projects</a>
                             <hr>
-                            <iconify-icon icon="ion:code-slash-outline" width="1.2rem" height="1.2rem"></iconify-icon>
+                            <iconify-icon icon="ion:code-slash-outline" width="20" height="20"></iconify-icon>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="link-wrapper">
+                            <a href="#experiences" class="link">Experience</a>
+                            <hr>
+                            <iconify-icon icon="noto-v1:briefcase" width="20" height="20"></iconify-icon>
                         </div>
                     </li>
                     <li>
                         <div class="link-wrapper">
                             <a href="#skills" class="link">Skills</a>
                             <hr>
-                            <iconify-icon icon="codicon:tools" width="1.2rem" height="1.2rem"></iconify-icon>
+                            <iconify-icon icon="codicon:tools" width="20" height="20"></iconify-icon>
                         </div>
                     </li>
-                    <li>
-                        <div class="link-wrapper">
-                            <a href="#Tools" class="link">Tools</a>
-                            <hr>
-                            <iconify-icon icon="proicons:settings" width="1.2rem" height="1.2rem"></iconify-icon>
-                        </div>
-                    </li>
+
                     <li>
                         <div class="link-wrapper">
                             <a href="#education" class="link"> Education</a>
                             <hr>
-                            <iconify-icon icon="carbon:education" width="1.2rem" height="1.2rem"></iconify-icon>
+                            <iconify-icon icon="carbon:education" width="20" height="20"></iconify-icon>
                         </div>
                     </li>
                     <li>
                         <div class="link-wrapper">
                             <a href="#contact" class="link">Contact</a>
                             <hr>
-                            <iconify-icon icon="ic:outline-email" width="1.2rem" height="1.2rem"></iconify-icon>
+                            <iconify-icon icon="ic:outline-email" width="20" height="20"></iconify-icon>
                         </div>
                     </li>
                 </ul>
@@ -74,7 +76,7 @@
                             <div class="link-wrapper">
                                 <h5 style="color: #fff;">Projects</h5>
                                 <hr>
-                                <iconify-icon icon="ion:code-slash-outline" width="1.2rem" height="1.2rem"
+                                <iconify-icon icon="ion:code-slash-outline" width="20" height="20"
                                     style="color: #fff;"></iconify-icon>
                             </div>
                         </a>
@@ -83,8 +85,7 @@
                             <div class="iconify-icon">
                                 <h5>GitHub</h5>
                                 <hr>
-                                <iconify-icon icon="radix-icons:github-logo" width="1.2rem"
-                                    height="1.2rem"></iconify-icon>
+                                <iconify-icon icon="radix-icons:github-logo" width="20" height="20"></iconify-icon>
                             </div>
                         </a>
                     </div>
@@ -97,6 +98,10 @@
     <div id="ProjectsComponent"></div>
     <!-- PROJECTS -->
 
+    <!-- EXPERIENCE -->
+    <div id="ExperiencesComponent"></div>
+    <!-- EXPERIENCE -->
+
     <!-- SKILLS -->
     <div id="SkillsComponent"></div>
     <!-- SKILLS -->
@@ -106,34 +111,8 @@
     <!-- EDUCATION -->
 
     <!-- CONTACT -->
-    <!-- <div id="ContactComponent"></div> -->
+    <div id="ContactComponent"></div>
     <!-- CONTACT -->
-
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h1>Contact <span>Me</span></h1>
-            <div class="contact-form">
-                <h1>Send <span>Email</span></h1>
-                <form @submit.prevent="sendEmail">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" v-model="form.name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" v-model="form.email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="fixed-textarea" v-model="form.message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-            <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
-            <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
-        </div>
-    </section>
 
     <!-- FOOTER -->
     <div id="FooterComponent"></div>
@@ -142,16 +121,50 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-    <!-- <script>
-        emailjs.init("It91k0r15PgN_HA8u"); 
-    </script> -->
 
-    <script src="../js/script.js"></script>
-    <script src="../js/ProjectsComponent.js"></script>
-    <script src="../js/SkillsComponent.js"></script>
-    <script src="../js/EducationComponent.js"></script>
-    <script src="../js/ContactComponent.js"></script>
-    <script src="../js/FooterComponent.js"></script>
+    <script src="../js/scrpit.js"></script>
+    <script src="../js/projects_component.js"></script>
+    <script src="../js/experiences_component.js"></script>
+    <script src="../js/skills_component.js"></script>
+    <script src="../js/education_component.js"></script>
+    <script src="../js/contact_component.js"></script>
+    <script src="../js/footer_component.js"></script>
+
+    <script type="module">
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        var requestOptions = {
+            method: "GET",
+            headers: myHeaders,
+            redirect: "follow",
+        };
+
+        let posts;
+        // const apiUrl = "https://zonetto.github.io/portfolio-api/api.json";
+
+    //  const apiUrl = "https://zonetto.github.io/portfolio-api/api.json";
+    //   async function fetchProjects() {
+    //         const apiUrl = "http://zonetto.github.io/portfolio-api/api.json";
+    //         try {
+    //             const response = await fetch(apiUrl, requestOptions);
+    //             const contentType = response.headers.get("content-type");
+    //             if (contentType && contentType.includes("application/json")) {
+    //                 const data = await response.json();
+    //                 console.log(data.project);
+    //             } else {
+    //                 const text = await response.text();
+    //                 console.error("Non-JSON response:", text);
+    //             }
+    //         } catch (error) {
+    //             console.error("Error fetching data:", error);
+    //         }
+    //     }
+    //     fetchProjects();
+
+
+    </script>
+
 </body>
 
 </html>

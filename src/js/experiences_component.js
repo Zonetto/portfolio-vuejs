@@ -1,0 +1,97 @@
+Vue.createApp({
+  template: `
+    <section id="experiences" class="timeline-section">
+      <h1>My <span>Experiences</span></h1>
+      <div class="timeline">
+        <div class="timeline-item" v-for="(experience, index) in experiences" :key="index">
+          <div class="timeline-dot">
+            <iconify-icon icon="mdi:briefcase-outline" width="30" height="30"></iconify-icon>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date">{{ experience.date }}</div>
+            <h3 class="timeline-title">{{ experience.title }}</h3>
+            <h4 class="timeline-company">{{ experience.company }}</h4>
+            <p class="timeline-description">{{ experience.description }}</p>
+            <div class="timeline-tech">
+              <h5>Technologies used:</h5>
+              <div class="tech-icons">
+                <iconify-icon 
+                  v-for="(icon, iconIndex) in experience.icons" 
+                  :key="iconIndex" 
+                  :icon="icon" 
+                  width="25" 
+                  height="25">
+                </iconify-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
+  data() {
+    return {
+      experiences: [
+      //   {
+      //     title: "Web Developer",
+      //     company: "M3 Digital - Contract",
+      //     date: "September 2021 - February 2022",
+      //     description:
+      //       "Front-end development for a variety of Shopify stores such as FitazFK, Rider Collective, Masseuse Massage. Developed high-quality landing pages and front-end features using HTML, CSS, SCSS, JavaScript, and Liquid.",
+      //     icons: ["logos:html-5", "logos:css-3", "logos:javascript", "logos:shopify"]
+      //   },
+      //   {
+      //     title: "Junior Developer",
+      //     company: "YouPay",
+      //     date: "February 2022 - November 2022",
+      //     description:
+      //       "Developed new features using Laravel, Vue.js, PHP, Tailwind CSS, MySQL, and REST APIs. Created an email notification system for merchants to receive summaries of YouPay carts created, paid, and canceled.",
+      //     icons: ["logos:vue", "logos:laravel", "logos:php", "logos:mysql"]
+      //   },
+      //   {
+      //     title: "Junior Developer",
+      //     company: "YouPay",
+      //     date: "February 2022 - November 2022",
+      //     description:
+      //       "Developed new features using Laravel, Vue.js, PHP, Tailwind CSS, MySQL, and REST APIs. Created an email notification system for merchants to receive summaries of YouPay carts created, paid, and canceled.",
+      //     icons: ["logos:vue", "logos:laravel", "logos:php", "logos:mysql"]
+      //   }
+      ]
+
+
+    };
+  },
+  methods: {
+    async fetchExperiences() {
+      const apiUrl = "http://zonetto.github.io/portfolio-api/api.json";
+      // const apiUrl = "https://v1.nocodeapi.com/12123asa/fbsdk/ZFoOtgUthcEpSaQM/firestore/allDocuments?collectionName=experiences";
+      const requestOptions = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow"
+      };
+
+      try {
+        const response = await fetch(apiUrl, requestOptions);
+        const data = await response.json();
+
+        // Transform fetched data into the desired card structure
+        this.experiences = data.experience.map(item => ({
+          title: item.title || "No Title",
+          company: item.company || "No Company",
+          date: item.date || "No Date",
+          description: item.description || "No Description",
+          icons: item.icons?.map(icon => icon) || [],
+        }));
+
+      } catch (error) {
+        console.error("Error fetching experiences:", error);
+      }
+    }
+  },
+  mounted() {
+    this.fetchExperiences();
+  }
+}).mount("#ExperiencesComponent");
