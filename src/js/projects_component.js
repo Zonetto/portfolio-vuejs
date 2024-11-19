@@ -43,12 +43,10 @@ Vue.createApp({
     },
     async fetchProjects() {
       const apiUrl = "https://zonetto.github.io/portfolio-api/api.json";
-      // const apiUrl = "https://v1.nocodeapi.com/12123asa/fbsdk/ZFoOtgUthcEpSaQM/firestore/allDocuments?collectionName=projects";
       const requestOptions = {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-
         },
         redirect: "follow"
       };
@@ -58,7 +56,7 @@ Vue.createApp({
         const data = await response.json();
 
         // Transform fetched data into the desired card structure
-        this.cards = data.project.map(item => ({
+        this.cards = data.projects.map(item => ({
           title: item.title || "No Title",
           description: item.description || "No Description",
           image: item.image || "https://images4.alphacoders.com/115/thumb-1920-115716.jpg",
