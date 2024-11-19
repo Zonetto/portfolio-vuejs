@@ -31,12 +31,25 @@ Vue.createApp({
   `,
   data() {
     return {
-      experiences: []
+      experiences: [
+        {
+          "id": "1",
+          "sort": "1",
+          "title": "Web Developer",
+          "company": "M3 Digital - Contract",
+          "date": "September 2021 - February 2022",
+          "description": "Front-end development for a variety of Shopify stores such as FitazFK, Rider Collective, Masseuse Massage. Developed high-quality landing pages and front-end features using HTML, CSS, SCSS, JavaScript, and Liquid",
+          "icons": [
+            "logos:html-5",
+            "logos:css-3"
+          ]
+        }
+      ]
     };
   },
   methods: {
     async fetchExperiences() {
-      const apiUrl = "http://zonetto.github.io/portfolio-api/api.json";
+      const apiUrl = "https://zonetto.github.io/portfolio-api/api.json";
       const requestOptions = {
         method: "GET",
         headers: {
@@ -64,6 +77,6 @@ Vue.createApp({
     }
   },
   mounted() {
-    this.fetchExperiences();
+    // this.fetchExperiences();
   }
 }).mount("#ExperiencesComponent");
