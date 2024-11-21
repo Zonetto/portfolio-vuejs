@@ -1,8 +1,8 @@
 // js/FooterComponent.js
 
 Vue.createApp({
-    template: `
-    <footer class="footer-section">
+  template: `
+    <div class="footer-section">
       <div class="footer-content">
         <p>&copy; {{ currentYear }} Ahmed Saad. All rights reserved.</p>
         <div class="social-links">
@@ -17,11 +17,11 @@ Vue.createApp({
           </a>
         </div>
       </div>
-    </footer>
+    </div>
   `,
-    data() {
-        return {
-            currentYear: new Date().getFullYear()
-        };
-    }
+  data() {
+    return {
+      currentYear: new Date().getFullYear()
+    };
+  }
 }).mount("#FooterComponent");
