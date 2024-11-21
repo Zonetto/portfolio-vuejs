@@ -13,111 +13,109 @@
 <link rel="stylesheet" href="../css/education_component.css">
 <link rel="stylesheet" href="../css/contact_component.css">
 <link rel="stylesheet" href="../css/footer_component.css">
-<!-- <link rel="stylesheet" href="../css/ToolsComponent.css"> -->
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
 <body>
     <header>
         <div id="particles-js">
             <div id="background-animation"></div>
-            <nav id="nav">
-                <ul class="nav-links" id="nav-links">
+            <nav id="nav" class="fixed-top">
+                <ul class="nav-links">
                     <li>
                         <div class="link-wrapper">
-                            <a href="#projects" class="link"> Projects</a>
-                            <hr>
-                            <iconify-icon icon="ion:code-slash-outline" width="20" height="20"></iconify-icon>
+                            <a href="#home" class="link">Home</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="link-wrapper">
+                            <a href="#projects" class="link">Projects</a>
                         </div>
                     </li>
                     <li>
                         <div class="link-wrapper">
                             <a href="#experiences" class="link">Experience</a>
-                            <hr>
-                            <iconify-icon icon="noto-v1:briefcase" width="20" height="20"></iconify-icon>
                         </div>
                     </li>
                     <li>
                         <div class="link-wrapper">
                             <a href="#skills" class="link">Skills</a>
-                            <hr>
-                            <iconify-icon icon="codicon:tools" width="20" height="20"></iconify-icon>
                         </div>
                     </li>
-
                     <li>
                         <div class="link-wrapper">
-                            <a href="#education" class="link"> Education</a>
-                            <hr>
-                            <iconify-icon icon="carbon:education" width="20" height="20"></iconify-icon>
+                            <a href="#education" class="link">Education</a>
                         </div>
                     </li>
                     <li>
                         <div class="link-wrapper">
                             <a href="#contact" class="link">Contact</a>
-                            <hr>
-                            <iconify-icon icon="ic:outline-email" width="20" height="20"></iconify-icon>
                         </div>
                     </li>
                 </ul>
             </nav>
-            <div class="profile-header">
-                <img src="/assets/images/img1.jpg" alt="logo">
+            <section id="home" class="section">
+                <div class="profile-header">
+                    <img src="/assets/images/img1.jpg" alt="logo">
 
-                <div class="hero">
-                    <h1 class="h1">
-                        Hi, I'm <span class="text-blue">Ahmed Saad</span>
-                    </h1>
-                    <p class="student" id="student">
-                        Software Developer
-                    </p>
-
-                    <div class="hero-btns">
-                        <a href="#projects" class="btn-blue">
-                            <div class="link-wrapper">
+                    <div class="hero">
+                        <h1 class="h1">Ahmed Saad</h1>
+                        <p class="student" id="student">
+                            Software Developer
+                        </p>
+                        <div class="hero-btns">
+                            <a href="#projects" class="btn-blue">
                                 <h5 style="color: #fff;">Projects</h5>
-                                <hr>
                                 <iconify-icon icon="ion:code-slash-outline" width="20" height="20"
                                     style="color: #fff;"></iconify-icon>
-                            </div>
-                        </a>
-
-                        <a href="https://github.com/Zonetto" class="btn-outline" target="_blank">
-                            <div class="iconify-icon">
+                            </a>
+                            <a href="https://github.com/Zonetto" class="btn-outline" target="_blank">
                                 <h5>GitHub</h5>
-                                <hr>
                                 <iconify-icon icon="radix-icons:github-logo" width="20" height="20"></iconify-icon>
-                            </div>
-                        </a>
+                            </a>
+
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     </header>
 
     <!-- PROJECTS -->
-    <div id="ProjectsComponent"></div>
+    <section id="projects" class="section">
+        <div id="ProjectsComponent"></div>
+    </section>
     <!-- PROJECTS -->
 
     <!-- EXPERIENCE -->
-    <div id="ExperiencesComponent"></div>
+    <section id="experiences" class="section">
+        <div id="ExperiencesComponent"></div>
+    </section>
     <!-- EXPERIENCE -->
 
     <!-- SKILLS -->
-    <div id="SkillsComponent"></div>
+    <section id="skills" class="section">
+        <div id="SkillsComponent"></div>
+    </section>
     <!-- SKILLS -->
 
     <!-- EDUCATION -->
-    <div id="EducationComponent"></div>
+    <section id="education" class="section">
+        <div id="EducationComponent"></div>
+    </section>
     <!-- EDUCATION -->
 
     <!-- CONTACT -->
-    <div id="ContactComponent"></div>
+    <section id="contact" class="section">
+        <div id="ContactComponent"></div>
+    </section>
     <!-- CONTACT -->
 
     <!-- FOOTER -->
-    <div id="FooterComponent"></div>
+    <footer>
+        <div id="FooterComponent"></div>
+    </footer>
+    <!-- FOOTER -->
 
-    <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
@@ -129,41 +127,7 @@
     <script src="../js/education_component.js"></script>
     <script src="../js/contact_component.js"></script>
     <script src="../js/footer_component.js"></script>
-
-    <script type="module">
-
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        var requestOptions = {
-            method: "GET",
-            headers: myHeaders,
-            redirect: "follow",
-        };
-
-        let posts;
-        // const apiUrl = "https://zonetto.github.io/portfolio-api/api.json";
-
-    //  const apiUrl = "https://zonetto.github.io/portfolio-api/api.json";
-    //   async function fetchProjects() {
-    //         const apiUrl = "http://zonetto.github.io/portfolio-api/api.json";
-    //         try {
-    //             const response = await fetch(apiUrl, requestOptions);
-    //             const contentType = response.headers.get("content-type");
-    //             if (contentType && contentType.includes("application/json")) {
-    //                 const data = await response.json();
-    //                 console.log(data.project);
-    //             } else {
-    //                 const text = await response.text();
-    //                 console.error("Non-JSON response:", text);
-    //             }
-    //         } catch (error) {
-    //             console.error("Error fetching data:", error);
-    //         }
-    //     }
-    //     fetchProjects();
-
-
-    </script>
+    <script src="../js/smooth_scroll_and_active_nav.js"></script>
 
 </body>
 
