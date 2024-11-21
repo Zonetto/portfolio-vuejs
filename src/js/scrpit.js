@@ -2,7 +2,7 @@
 particlesJS('background-animation', {
     particles: {
         number: {
-            value: 100,  // Number of dots
+            value: 130,  // Number of dots
             density: {
                 enable: true,
                 value_area: 800
@@ -35,7 +35,7 @@ particlesJS('background-animation', {
         },
         move: {
             enable: true,
-            speed: 2,  // Movement speed of dots
+            speed: 3,  // Movement speed of dots
             direction: "none",
             random: true,
             straight: false,
