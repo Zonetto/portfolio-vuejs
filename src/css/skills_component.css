@@ -1,4 +1,4 @@
-/* Skills Section Styling */
+/* General Skills Section */
 .skills-section {
     padding: 4rem 0;
     background-color: #f9f9f9;
@@ -31,6 +31,7 @@
     padding: 1rem 0;
 }
 
+/* Scrolling Wrapper */
 .scrolling-wrapper {
     display: flex;
     gap: 2rem;
@@ -38,7 +39,7 @@
     width: fit-content;
 }
 
-/* Individual skill item styling */
+/* Individual Skill Items */
 .skill-item {
     display: flex;
     flex-direction: column;
@@ -69,15 +70,7 @@
     }
 }
 
-/* Navigation Buttons Styling */
-.nav-buttons {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    gap: 0.5rem;
-}
-
+/* Hover Effects */
 .skills-icons:hover .scrolling-wrapper {
     animation-play-state: paused;
 }
@@ -87,17 +80,59 @@
     transition: 0.1s;
 }
 
-.nav-buttons button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+/* Cancel Scrolling and Display All Icons on Mobile */
+@media (max-width: 768px) {
+    .skills-icons {
+        overflow: visible;
+
+    }
+
+    .skills-container {
+        padding: 1rem;
+    }
+
+    .scrolling-wrapper {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .skill-item {
+        width: 5rem;
+    }
+
+    .skill-icon {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .skill-title {
+        font-size: 0.8rem;
+    }
 }
 
-.nav-buttons button:hover {
-    background-color: #0056b3;
+@media (max-width: 576px) {
+    .scrolling-wrapper {
+        gap: 1.5rem;
+
+    }
+
+    .skills-icons {
+        padding: 0.5rem;
+    }
+
+    .skill-item {
+        width: 4.5rem;
+    }
+
+    .skill-icon {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .skill-title {
+        font-size: 0.75rem;
+    }
 }

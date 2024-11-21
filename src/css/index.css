@@ -5,98 +5,24 @@
     font-family: "Nunito", sans-serif;
 }
 
-
 #background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     background-color: #202224;
     z-index: 0;
-    position: absolute;
 }
 
-
-
-header nav {
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2em;
-}
-
-
-header nav .nav-links {
-    z-index: 1000;
-}
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    position: relative;
     min-height: 80vh;
-    background-size: cover;
-    position: relative;
+    background-color: #202224;
+    overflow: hidden;
 }
 
-
-.nav-links {
-    display: flex;
-    flex-direction: row;
-    padding-top: rem;
-}
-
-header nav .nav-links li {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 2rem;
-}
-
-header nav .nav-links a {
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: white;
-    /* padding: 0 0.5rem; */
-}
-
-hr {
-    border: 0 solid;
-    color: currentColor;
-    padding: 0.1rem;
-}
-
-
-.iconify-icon {
-    color: #3783ff;
-    flex-direction: row;
-    align-items: center;
-    display: flex;
-}
-
-.link-wrapper {
-    display: flex;
-    align-items: center;
-    position: relative;
-    color: #3783ff;
-}
-
-.link-wrapper::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 2px;
-    width: 0%;
-    bottom: -8px;
-    margin: auto;
-    background: #3b82f6;
-    transition: width 0.3s ease;
-}
-
-.link-wrapper:hover::after {
-    width: 100%;
-}
 
 header .hero {
     z-index: 5;
@@ -104,92 +30,281 @@ header .hero {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-header .hero h1,
-header .hero p {
+
+header .hero p,
+header .hero h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: bold;
     color: white;
     z-index: 1;
 }
 
-header .hero h1,
-header .hero h2 span {
-    letter-spacing: 2px;
-    white-space: nowrap;
-    text-align: center;
-    font-size: clamp(2rem, 5vw, 4rem);
-    font-weight: bold;
-}
-
 header .hero p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     color: #dcdcdc;
     line-height: 1.6;
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
-    text-align: center;
     max-width: 800px;
     margin: 0 auto;
     padding: 0.5rem;
-}
-
-header .hero p .blue-link-underline {
-    color: #3783ff;
-}
-
-header .hero .hero-btns {
-    white-space: nowrap;
     text-align: center;
-    margin-top: 1rem;
 }
 
 .hero-btns {
     display: flex;
+    white-space: nowrap;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    font-size: large;
+    justify-self: center;
+    gap: 1rem;
     z-index: 1;
 }
 
 
 /* Button Outline */
-.btn-outline {
-    display: inline-flex;
+.btn-outline,
+.btn-blue {
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 30px;
+    flex-direction: row;
+    padding: 15px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.btn-outline {
     border: 2px solid #007bff;
     color: #007bff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    white-space: nowrap;
+    background: transparent;
 }
 
-/* Hover Effect for Button Outline */
 .btn-outline:hover {
-    background-color: #007bff;
-    color: #fff;
-    border: 2px solid #007bff;
-    text-decoration: none;
-}
-
-.btn-outline:hover h5,
-/* Change the text color to white on hover */
-.btn-outline:hover .iconify-icon {
-    /* Change the icon color to white on hover */
+    background: #007bff;
+    border-color: #007bff;
+    transform: scale(1.1);
     color: #fff;
 }
 
+.btn-blue:hover {
+    /* background: #0056b3; */
+    transform: scale(1.1);
+    border-color: #0056b3;
+}
 
-.btn-blue {
-    border: 2px solid #007bff;
-    background-color: #007bff;
-    color: #fff;
+
+
+/* Profile Header (Image) */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10rem;
+}
+
+.profile-header img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    z-index: 1;
+}
+
+
+
+nav {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    width: 60%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    border-radius: 2rem;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: inline;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+.link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.link-wrapper .link {
     text-decoration: none;
-    padding: 20px 40px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    padding: 8px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.link-wrapper .link.active,
+.link-wrapper .link:hover {
+    background-color: #3b82f6;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Responsive Adjustments for Large Screens */
+@media (max-width: 1024px) {
+    header {
+        min-height: 45vh;
+    }
+
+    nav {
+        width: 80%;
+        padding: 10px 1rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        padding: 0 5px;
+    }
+}
+
+/* Responsive Adjustments for Small Screens - Mobile View  */
+@media (max-height: 600px) {
+    header {
+        min-height: 100vh;
+    }
+
+    nav {
+        width: 80%;
+        padding: 10px 1rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        padding: 0 5px;
+    }
+}
+
+
+/* Responsive Adjustments for Medium Screens */
+@media (max-width: 900px) {
+    header {
+        min-height: 55vh;
+    }
+
+    nav {
+        width: 80%;
+        padding: 10px 1rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        padding: 0 5px;
+    }
+}
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 768px) {
+    header {
+        min-height: 70vh;
+    }
+
+    nav {
+        width: 80%;
+        padding: 10px 1rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        padding: 0 5px;
+    }
+
+    .link-wrapper .link {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    header {
+        min-height: 80vh;
+    }
+
+    .nav-links li {
+        padding: 5px;
+    }
+
+    nav {
+        padding: 5px 0;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .link-wrapper .link {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
+
+/* Responsive Animations */
+header #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Scroll Button */
+header .scroll-btn-container {
+    position: absolute;
+    width: 100%;
+    bottom: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-btn-container div a span {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-bottom: 2px solid #3b82f6;
+    border-right: 2px solid #3b82f6;
+    transform: rotate(45deg);
+    margin: -20px 0;
+    animation: animate 2s infinite;
 }
 
 
@@ -207,34 +322,12 @@ header .socials ul {
     align-items: flex-end;
 }
 
-.profile-header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
-    gap: 1rem;
-
-}
 
 
-header #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    z-index: 1;
-}
 
 
-.profile-header img {
-    z-index: 1;
-    width: 10rem;
-    height: 10rem;
-    margin-top: 10rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
+header .hero p .blue-link-underline {
+    color: #3783ff;
 }
 
 .hero {
@@ -273,12 +366,7 @@ header .socials ul li:hover {
     transform: translateX(115px);
 }
 
-header .scroll-btn-container {
-    position: absolute;
-    width: 100%;
-    background: red;
-    bottom: 150px;
-}
+
 
 header .scroll-btn-container div {
     display: flex;
@@ -292,16 +380,6 @@ header .scroll-btn-container div a {
     justify-content: space-between;
 }
 
-header .scroll-btn-container div a span {
-    display: block;
-    height: 20px;
-    width: 20px;
-    border-bottom: 2px solid #3b82f6;
-    border-right: 2px solid #3b82f6;
-    transform: rotate(45deg);
-    margin: -20px 0;
-    animation: animate 2s infinite;
-}
 
 header .scroll-btn-container div a span:nth-child(2) {
     animation-delay: -0.2s;
