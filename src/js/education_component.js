@@ -1,7 +1,7 @@
 // js/EducationComponent.js
 Vue.createApp({
-    template: `
-    <section id="education" class="education-section">
+  template: `
+    <div class="education-section">
       <div class="education-container">
         <h1>My <span>Education</span></h1>
         <div class="education-cards">
@@ -13,18 +13,18 @@ Vue.createApp({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   `,
-    data() {
-        return {
-            education: [
-                {
-                    degree: "Bachelor of Science in Computer Science",
-                    institution: "University of Kufa",
-                    duration: "2019 - 2024",
-                    description: "Studied core computer science concepts, including data structures, algorithms, and software engineering."
-                },
-            ]
-        };
-    }
+  data() {
+    return {
+      education: [
+        {
+          degree: "Bachelor of Science in Computer Science",
+          institution: "University of Kufa",
+          duration: "2019 - 2024",
+          description: "Studied core computer science concepts, including data structures, algorithms, and software engineering."
+        },
+      ]
+    };
+  }
 }).mount("#EducationComponent");
