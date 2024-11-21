@@ -1,7 +1,7 @@
 
 Vue.createApp({
   template: `
-    <section id="skills" class="skills-section">
+    <div class="skills-section">
       <div class="skills-container">
         <h1>My <span>Skills</span></h1>
         <div class="skills-icons">
@@ -17,7 +17,7 @@ Vue.createApp({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   `,
   data() {
     return {
