@@ -1,6 +1,6 @@
 Vue.createApp({
   template: `
-    <section id="experiences" class="timeline-section">
+    <div class="timeline-section">
       <h1>My <span>Experiences</span></h1>
       <div class="timeline">
         <div class="timeline-item" v-for="(experience, index) in experiences" :key="index">
@@ -27,24 +27,11 @@ Vue.createApp({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   `,
   data() {
     return {
-      experiences: [
-        // {
-        //   "id": "1",
-        //   "sort": "1",
-        //   "title": "Web Developer",
-        //   "company": "M3 Digital - Contract",
-        //   "date": "September 2021 - February 2022",
-        //   "description": "Front-end development for a variety of Shopify stores such as FitazFK, Rider Collective, Masseuse Massage. Developed high-quality landing pages and front-end features using HTML, CSS, SCSS, JavaScript, and Liquid",
-        //   "icons": [
-        //     "logos:html-5",
-        //     "logos:css-3"
-        //   ]
-        // }
-      ]
+      experiences: []
     };
   },
   methods: {
