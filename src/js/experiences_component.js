@@ -31,7 +31,8 @@ Vue.createApp({
   `,
   data() {
     return {
-      experiences: []
+      experiences: [
+      ]
     };
   },
   methods: {

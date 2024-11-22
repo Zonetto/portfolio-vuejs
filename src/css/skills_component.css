@@ -75,6 +75,10 @@
     animation-play-state: paused;
 }
 
+.skill-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .skill-item:hover {
     transform: scale(1.4);
     transition: 0.1s;
